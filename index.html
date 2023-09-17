@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Managena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script defer src="data-manager.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="config">
+        <ion-icon class="config-icon" name="settings-outline"></ion-icon>
+      </div>
+      <div class="title-container">
+        <ion-icon class="calendar-icon" name="calendar-outline"></ion-icon>
+        <h1 class="title">Managena Task Manager</h1>
+      </div>
+      <main class="task-manager main-grid container">
+        <div class="day day-0">
+          <div class="date">
+            <h2 class="date-heading" data-day="0"></h2>
+          </div>
+          <button class="add-task btn" data-btn="0">
+            <ion-icon class="add-task-icon" name="add-outline"></ion-icon>
+          </button>
+          <div class="tasks"></div>
+        </div>
+
+        <div class="day day-1">
+          <div class="date">
+            <h2 class="date-heading" data-day="1"></h2>
+          </div>
+          <button class="add-task btn" data-btn="1">
+            <ion-icon class="add-task-icon" name="add-outline"></ion-icon>
+          </button>
+          <div class="tasks"></div>
+        </div>
+
+        <div class="day day-2">
+          <div class="date">
+            <h2 class="date-heading" data-day="2"></h2>
+          </div>
+          <button class="add-task btn" data-btn="2">
+            <ion-icon class="add-task-icon" name="add-outline"></ion-icon>
+          </button>
+          <div class="tasks"></div>
+        </div>
+
+        <div class="day day-3">
+          <div class="date">
+            <h2 class="date-heading" data-day="3"></h2>
+          </div>
+          <button class="add-task btn" data-btn="3">
+            <ion-icon class="add-task-icon" name="add-outline"></ion-icon>
+          </button>
+          <div class="tasks"></div>
+        </div>
+
+        <div class="day day-4">
+          <div class="date">
+            <h2 class="date-heading" data-day="4"></h2>
+          </div>
+          <button class="add-task btn" data-btn="4">
+            <ion-icon class="add-task-icon" name="add-outline"></ion-icon>
+          </button>
+          <div class="tasks"></div>
+        </div>
+
+        <div class="day day-5">
+          <div class="date">
+            <h2 class="date-heading" data-day="5"></h2>
+          </div>
+          <button class="add-task btn" data-btn="5">
+            <ion-icon class="add-task-icon" name="add-outline"></ion-icon>
+          </button>
+          <div class="tasks"></div>
+        </div>
+      </main>
+
+      <div class="modal-window hidden display-none" data-weekday="">
+        <div class="modal-title">
+          <h2 class="modal-title-heading">TASK CREATOR</h2>
+          <ion-icon class="close-modal" name="close-outline"></ion-icon>
+        </div>
+        <div class="modal-menu">
+          <form class="form" action="">
+            <div class="menu task-input">
+              <label for="task-input">Task</label>
+              <input class="input" type="text" id="task-input" />
+            </div>
+            <div class="menu priority">
+              <label for="priority">Set priority</label>
+              <select class="input" name="priority" id="priority">
+                <option value="p-low">Low</option>
+                <option value="p-medium">Medium</option>
+                <option value="p-high">High</option>
+              </select>
+            </div>
+            <div class="menu duration">
+              <label for="duration">Task duration</label>
+              <select class="input" name="duration" id="duration">
+                <option value="d-short">Short</option>
+                <option value="d-medium">Medium</option>
+                <option value="d-long">Long</option>
+              </select>
+            </div>
+            <div class="menu add">
+              <button class="add-btn btn-modal">ADD</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="config-window modal-window hidden display-none">
+        <div class="modal-title">
+          <h2 class="modal-title-heading">CONFIGURATION</h2>
+          <ion-icon class="close-modal" name="close-outline"></ion-icon>
+        </div>
+        <div class="modal-menu">
+          <form class="form" action="">
+            <div class="menu priority">
+              <label for="sort-priority">Sort Priority</label>
+              <select class="input" name="sort-priority" id="sort-priority">
+                <option value="sort-high">High first</option>
+                <option value="sort-low">Low first</option>
+              </select>
+            </div>
+            <div class="menu duration">
+              <label for="sort-duration">Sort Duration</label>
+              <select class="input" name="sort-duration" id="sort-duration">
+                <option value="sort-short">Short first</option>
+                <option value="sort-long">Long first</option>
+              </select>
+            </div>
+            <div class="menu add">
+              <button class="config-btn btn-modal">APPLY</button>
+              <button class="delete-btn btn-modal">DELETE DATA!!!!!!</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="overlay hidden display-none"></div>
+    </div>
+  </body>
+</html>

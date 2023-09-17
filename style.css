@@ -1,0 +1,329 @@
+/* FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+/* //////////////////////////// main app /////////////////////////////////// */
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-evenly;
+  background-color: #f8f9fa;
+}
+
+.config {
+  position: absolute;
+  right: 8rem;
+  top: 4.8rem;
+}
+
+.config:hover {
+  cursor: pointer;
+}
+
+.config-icon {
+  font-size: 4rem;
+  position: relative;
+  color: rgb(99, 99, 99);
+  padding: 0.6rem;
+  transition: transform 0.3s;
+}
+
+.config-icon:hover {
+  color: rgb(80, 80, 80);
+  transform: rotate(35deg);
+}
+
+.config-icon:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #7ead3c6e;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+  font-size: 4.4rem;
+  color: #5c940d;
+}
+
+.calendar-icon {
+  font-size: 8.6rem;
+  color: #f77027;
+}
+
+.container {
+  min-width: 85%;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+}
+
+.day {
+  height: 60vh;
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: #e9fac8;
+  box-shadow: 0 0 0.1rem 0.1rem #a9e34b;
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  padding: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin-bottom: 0.6rem;
+  color: #f4fce3;
+  background-color: #5c940d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-task {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  background-color: #c0eb75;
+  /* box-shadow: inset 0 0 0 0.3rem #4353346c; */
+  transition: 0.3s;
+  border-radius: 9px;
+  margin: 0.6rem;
+  margin-bottom: 0;
+}
+
+.add-task-icon {
+  font-size: 6.6rem;
+  color: #f4fce3;
+  transition: 0.3s;
+}
+
+.add-task:hover {
+  background-color: #a9e34b;
+  box-shadow: inset 0 0 0.1rem 0.1rem #94d82d;
+
+  cursor: pointer;
+}
+
+.add-task:hover .add-task-icon {
+  color: #66a80f;
+}
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+/* //////////////////////////// modal window /////////////////////////////// */
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+.modal-window {
+  font-family: inherit;
+  overflow: hidden;
+  position: absolute;
+  width: 50rem;
+  background-color: #82c91eab;
+  border-radius: 9px;
+  box-shadow: 0 0 2.4rem 1.6rem rgba(0, 0, 0, 0.096);
+  color: #121e03;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.modal-window.hidden {
+  transform: translateY(3rem);
+}
+
+.modal-title {
+  background-color: #ffd000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-title-heading {
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.modal-menu {
+  padding: 3rem 4rem 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.menu {
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.8rem;
+}
+
+.duration {
+  margin-bottom: 2.4rem;
+}
+
+.btn-modal {
+  background-color: #ffd000;
+
+  padding: 1.6rem 1.6rem;
+  width: 100%;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: 0.3s;
+  border: none;
+}
+
+.delete-btn {
+  background-color: rgb(163, 0, 0);
+  color: rgb(255, 230, 0);
+}
+
+.btn-modal:hover {
+  background-color: #ffe880;
+  color: #665300;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0 3rem 0 rgba(15, 85, 2, 0.171);
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+.input {
+  height: 4rem;
+  border-radius: 9px;
+  border: 2px solid rgb(160, 160, 160);
+  font-size: 2rem;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.226);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.display-none {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #121e03;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  transform: scale(1.1);
+}
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+/* //////////////////////////// tasks elements////////////////////////////// */
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+.tasks {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem 0.6rem;
+}
+
+.task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #121e03;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s;
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+.d-long {
+  grid-row: span 3;
+}
+
+.d-medium {
+  grid-row: span 2;
+}
+
+.d-short {
+  grid-row: span 1;
+}
+
+.p-high {
+  background-color: #f77027;
+  /* color: #01ddfa; */
+}
+.p-medium {
+  background-color: #ffd43b;
+  /* color: #0a00db; */
+}
+.p-low {
+  background-color: #69db7c;
+  /* color: #df00f5; */
+}
